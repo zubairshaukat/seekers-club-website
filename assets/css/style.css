@@ -565,3 +565,37 @@ input[type="submit"]:hover, button[type="submit"]:hover { background: var(--sc-d
 .sc-checklist li { padding-left: 30px; position: relative; }
 .sc-checklist li::before { content: ""; position: absolute; left: 0; top: .45em; width: 16px; height: 9px; border-left: 3px solid var(--sc-green); border-bottom: 3px solid var(--sc-green); transform: rotate(-45deg); }
 .sc-noscript { background: var(--sc-accent-soft); color: var(--sc-deep); padding: 12px 24px; text-align: center; }
+
+/* ---------- Mega menu (News and events) ---------- */
+.sc-menu > li.sc-has-mega { position: static; }
+.sc-mega {
+	position: absolute; left: 0; right: 0; top: 100%;
+	background: #fff; border-top: 1px solid var(--sc-line); border-bottom: 3px solid var(--sc-green);
+	box-shadow: 0 18px 40px rgba(14,46,37,.14);
+	opacity: 0; visibility: hidden; transform: translateY(6px);
+	transition: opacity .15s, transform .15s, visibility .15s;
+	z-index: 60;
+}
+.sc-has-mega:hover > .sc-mega, .sc-has-mega:focus-within > .sc-mega { opacity: 1; visibility: visible; transform: none; }
+.sc-mega__inner {
+	max-width: var(--sc-wrap); margin: 0 auto; padding: 28px 24px 32px;
+	display: grid; gap: 28px; grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.sc-mega__heading {
+	display: block; font-family: var(--sc-font-display); font-weight: 700; font-size: 1.05rem;
+	color: var(--sc-deep); padding-bottom: 10px; margin-bottom: 8px; border-bottom: 2px solid var(--sc-accent-soft);
+}
+.sc-mega ul { list-style: none; margin: 0; padding: 0; }
+.sc-menu .sc-mega a { padding: 8px 0; font-weight: 600; color: var(--sc-text); }
+.sc-menu .sc-mega a:hover { color: var(--sc-green); }
+
+@media (max-width: 1080px) {
+	.sc-menu > li.sc-has-mega { position: relative; }
+	.sc-mega {
+		position: static; opacity: 1; visibility: visible; transform: none;
+		box-shadow: none; border: 0;
+	}
+	.sc-mega__inner { grid-template-columns: 1fr; gap: 6px; padding: 4px 0 8px 16px; }
+	.sc-mega__heading { font-size: .95rem; border: 0; padding: 10px 0 2px; margin: 0; color: var(--sc-eyebrow); }
+	.sc-menu .sc-mega a { padding: 10px 0; }
+}

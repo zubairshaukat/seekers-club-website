@@ -4,7 +4,6 @@
   "topBar": "Guiding futures, fighting poverty, and fostering unity — since 2015",
   "logo": "https://theseekersclub.org/wp-content/uploads/2025/09/seekers-logo-web-png.png",
   "metaDescription": "The Seekers Club is a Pakistan-based non-profit empowering youth through career counselling, fighting poverty through scholarships and jobs, and building harmony through welfare and dialogue.",
-
   "contact": {
     "phone": "+92 304 5673621",
     "phoneAlt": "+92 345 5650262",
@@ -13,13 +12,11 @@
     "mapEmbed": "https://maps.google.com/maps?q=33.656,73.221&z=15&output=embed",
     "contactFormUrl": ""
   },
-
   "links": {
     "donate": "donate.html",
     "volunteer": "contact.html",
     "member": "contact.html"
   },
-
   "social": {
     "whatsapp": "https://whatsapp.com/channel/0029VajyPicEQIapE3eoTZ0l",
     "facebook": "https://www.facebook.com/profile.php?id=100064364185589",
@@ -27,23 +24,114 @@
     "youtube": "https://www.youtube.com/@AbdulAmmarMunam",
     "linkedin": "https://www.linkedin.com/company/the-seekers-let-s-seek-and-serve/"
   },
-
   "menu": [
-    { "label": "Home", "url": "index.html" },
-    { "label": "About", "url": "about.html", "children": [
-      { "label": "About us", "url": "about.html" },
-      { "label": "Team", "url": "people.html?group=team" },
-      { "label": "Advisors", "url": "people.html?group=advisors" },
-      { "label": "Volunteers", "url": "people.html?group=volunteers" }
-    ]},
-    { "label": "Projects", "url": "projects.html" },
-    { "label": "Youth counselling", "url": "youth.html" },
-    { "label": "Events", "url": "events.html" },
-    { "label": "Gallery", "url": "gallery.html" },
-    { "label": "Stories", "url": "stories.html" },
-    { "label": "Contact", "url": "contact.html" }
+    {
+      "label": "Home",
+      "url": "index.html"
+    },
+    {
+      "label": "About",
+      "url": "about.html",
+      "children": [
+        {
+          "label": "About us",
+          "url": "about.html"
+        },
+        {
+          "label": "Advisors",
+          "url": "people.html?group=advisors"
+        },
+        {
+          "label": "Team",
+          "url": "people.html?group=team"
+        },
+        {
+          "label": "Volunteers",
+          "url": "people.html?group=volunteers"
+        }
+      ]
+    },
+    {
+      "label": "Projects",
+      "url": "projects.html"
+    },
+    {
+      "label": "News and events",
+      "url": "events.html",
+      "mega": [
+        {
+          "heading": "Welfare activities",
+          "items": [
+            {
+              "label": "Supports cloudburst victims",
+              "url": "story.html?id=swabi-cloudburst-relief"
+            },
+            {
+              "label": "Reaches out to Jalalpur",
+              "url": "story.html?id=jalalpur-pirwala-outreach"
+            },
+            {
+              "label": "All stories",
+              "url": "stories.html"
+            }
+          ]
+        },
+        {
+          "heading": "Counselling",
+          "items": [
+            {
+              "label": "Youth counselling",
+              "url": "youth.html"
+            },
+            {
+              "label": "Volunteers",
+              "url": "people.html?group=volunteers"
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "items": [
+            {
+              "label": "Upcoming events",
+              "url": "events.html"
+            },
+            {
+              "label": "Past events",
+              "url": "events.html?when=past"
+            },
+            {
+              "label": "Photo gallery",
+              "url": "gallery.html"
+            }
+          ]
+        },
+        {
+          "heading": "Downloads",
+          "items": [
+            {
+              "label": "Jars-e-Carvan (PDF)",
+              "url": "https://theseekersclub.org/wp-content/uploads/2025/01/Jarsey-carvan.pdf",
+              "newTab": true
+            },
+            {
+              "label": "Tranquility (PDF)",
+              "url": "https://theseekersclub.org/wp-content/uploads/2025/01/Tranquility.pdf",
+              "newTab": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Gallery",
+      "url": "gallery.html"
+    },
+    {
+      "label": "Contact",
+      "url": "contact.html"
+    }
   ],
-
   "hero": {
     "eyebrow": "Non-profit · Non-sectarian · Pakistan",
     "title": "Empowered youth. Equal opportunities. A harmonious society.",
@@ -53,32 +141,58 @@
     "badgeBig": "2015",
     "badgeSmall": "Serving communities since 4 July 2015"
   },
-
   "stats": [
-    { "number": "", "label": "Families supported" },
-    { "number": "", "label": "Trees planted" },
-    { "number": "", "label": "Youth counselled" },
-    { "number": "", "label": "Active volunteers" }
+    {
+      "number": "",
+      "label": "Families supported"
+    },
+    {
+      "number": "",
+      "label": "Trees planted"
+    },
+    {
+      "number": "",
+      "label": "Youth counselled"
+    },
+    {
+      "number": "",
+      "label": "Active volunteers"
+    }
   ],
-
   "founder": {
     "quote": "Where empowerment meets equality, and diversity breeds harmony.",
     "name": "Abdul Ammar Mun'am",
     "role": "Founder and President",
     "image": "https://theseekersclub.org/wp-content/uploads/2025/09/Abdul-Ammar-Munam.jpg"
   },
-
   "donate": {
     "bankDetails": ""
   },
-
   "footerAbout": "A Pakistan-based non-profit, non-sectarian organization working for sustainable social, economic and environmental development.",
   "footerLinks": [
-    { "label": "About us", "url": "about.html" },
-    { "label": "Events", "url": "events.html" },
-    { "label": "Gallery", "url": "gallery.html" },
-    { "label": "Donate", "url": "donate.html" },
-    { "label": "Contact", "url": "contact.html" }
+    {
+      "label": "About us",
+      "url": "about.html"
+    },
+    {
+      "label": "Events",
+      "url": "events.html"
+    },
+    {
+      "label": "Gallery",
+      "url": "gallery.html"
+    },
+    {
+      "label": "Donate",
+      "url": "donate.html"
+    },
+    {
+      "label": "Contact",
+      "url": "contact.html"
+    }
   ],
-  "credit": { "label": "Witsols", "url": "https://witsols.com" }
+  "credit": {
+    "label": "Witsols",
+    "url": "https://witsols.com"
+  }
 }

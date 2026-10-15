@@ -163,8 +163,24 @@
 		return map[ cur ] === file;
 	}
 
+	function linkAttrs( it ) {
+		return 'href="' + esc( it.url ) + '"' + ( it.newTab ? ' target="_blank" rel="noopener"' : '' );
+	}
+
 	function menuHtml( items ) {
 		return '<ul class="sc-menu">' + items.map( function ( it ) {
+			if ( it.mega && it.mega.length ) {
+				var all = [];
+				it.mega.forEach( function ( col ) { all = all.concat( col.items || [] ); } );
+				var megaCur = isCurrent( it.url ) || all.some( function ( c ) { return isCurrent( c.url ); } );
+				return '<li class="sc-has-mega' + ( megaCur ? ' current-menu-item' : '' ) + '"><a href="' + esc( it.url ) + '" aria-haspopup="true"' + ( megaCur ? ' aria-current="page"' : '' ) + '>' + esc( it.label ) + '</a>' +
+					'<div class="sc-mega"><div class="sc-mega__inner">' + it.mega.map( function ( col ) {
+						return '<div class="sc-mega__col"><span class="sc-mega__heading">' + esc( col.heading ) + '</span><ul>' +
+							( col.items || [] ).map( function ( c ) {
+								return '<li' + ( isCurrent( c.url ) ? ' class="current-menu-item"' : '' ) + '><a ' + linkAttrs( c ) + '>' + esc( c.label ) + '</a></li>';
+							} ).join( '' ) + '</ul></div>';
+					} ).join( '' ) + '</div></div></li>';
+			}
 			var cur = isCurrent( it.url ) || ( it.children || [] ).some( function ( c ) { return isCurrent( c.url ); } );
 			var sub = it.children && it.children.length ?
 				'<ul class="sub-menu">' + it.children.map( function ( c ) {
