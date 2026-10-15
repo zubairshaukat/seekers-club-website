@@ -1,0 +1,69 @@
+name: Import photos from server
+
+# One-off helper: copies photos that were uploaded straight to the server
+# (by File Manager / FTP) into this repo with clean names, so they are
+# versioned and can be used in the JSON content.
+#   - skips WordPress thumbnail copies (name-300x200.jpg etc.), PDFs and logs
+#   - removes a trailing ".sorry", renames .jpeg -> .jpg
+on:
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: Folder on the server, relative to the site root
+        default: assets/images/01
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download folder over FTPS
+        env:
+          USER: ${{ secrets.FTP_USERNAME }}
+          PASS: ${{ secrets.FTP_PASSWORD }}
+          HOST: "103.180.236.111"
+          DIR: ${{ inputs.folder }}
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y lftp > /dev/null
+          mkdir -p /tmp/incoming
+          lftp -u "$USER","$PASS" -p 21 "$HOST" -e "
+            set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate no;
+            set net:max-retries 2; set net:timeout 30;
+            mirror --parallel=4 --exclude-glob '*.pdf*' --exclude-glob '*.txt*' '$DIR' /tmp/incoming;
+            bye"
+          echo "Downloaded $(find /tmp/incoming -type f | wc -l) files"
+
+      - name: Keep originals with clean names
+        env:
+          DIR: ${{ inputs.folder }}
+        run: |
+          python3 - <<'EOF'
+          import os, re, shutil, json
+          src, dst = "/tmp/incoming", os.environ["DIR"]
+          os.makedirs(dst, exist_ok=True)
+          thumb = re.compile(r"-\d+x\d+\.(jpe?g|png|webp|gif)$", re.I)
+          kept = []
+          for name in sorted(os.listdir(src)):
+              clean = re.sub(r"\.sorry$", "", name, flags=re.I)
+              if not re.search(r"\.(jpe?g|png|webp|gif)$", clean, re.I) or thumb.search(clean):
+                  continue
+              clean = re.sub(r"\.jpeg$", ".jpg", clean, flags=re.I)
+              clean = re.sub(r"\.JPG$", ".jpg", clean)
+              shutil.copy2(os.path.join(src, name), os.path.join(dst, clean))
+              kept.append({"file": clean, "bytes": os.path.getsize(os.path.join(dst, clean))})
+          json.dump(kept, open(os.path.join(dst, "_manifest.json"), "w"), indent=1)
+          print(f"Kept {len(kept)} original photos")
+          EOF
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ inputs.folder }}"
+          git diff --cached --quiet && echo "Nothing new" || git commit -m "Import photos from server: ${{ inputs.folder }}"
+          git push
