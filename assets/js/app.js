@@ -341,6 +341,8 @@
 			( extraBtn || '' ) + '</div></div>';
 	}
 
+	function hasPhotos( al ) { return ( al.photos || [] ).length > 0; }
+
 	function byDateDesc( a, b ) { return ( b.date || '' ).localeCompare( a.date || '' ); }
 
 	/* ---------------- pages ---------------- */
@@ -384,7 +386,7 @@
 		} );
 
 		load( 'albums' ).then( function ( d ) {
-			var list = published( d.albums ).slice().sort( byDateDesc ).slice( 0, 4 );
+			var list = published( d.albums ).filter( hasPhotos ).sort( byDateDesc ).slice( 0, 4 );
 			if ( ! list.length ) { return; }
 			fill( '#home-gallery-strip', list.map( function ( al ) {
 				return '<a href="album.html?id=' + encodeURIComponent( al.id ) + '">' + img( al.cover || ( al.photos || [] )[ 0 ], '' ) + '<span>' + esc( al.title ) + '</span></a>';
@@ -491,7 +493,7 @@
 		var type = params.get( 'type' ) || '';
 		var yr = params.get( 'yr' ) || '';
 		load( 'albums' ).then( function ( d ) {
-			var all = published( d.albums ).slice().sort( byDateDesc );
+			var all = published( d.albums ).filter( hasPhotos ).sort( byDateDesc );
 			var types = [];
 			var years = [];
 			all.forEach( function ( a ) {

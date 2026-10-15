@@ -105,21 +105,6 @@
               "url": "gallery.html"
             }
           ]
-        },
-        {
-          "heading": "Downloads",
-          "items": [
-            {
-              "label": "Jars-e-Carvan (PDF)",
-              "url": "https://theseekersclub.org/wp-content/uploads/2025/01/Jarsey-carvan.pdf",
-              "newTab": true
-            },
-            {
-              "label": "Tranquility (PDF)",
-              "url": "https://theseekersclub.org/wp-content/uploads/2025/01/Tranquility.pdf",
-              "newTab": true
-            }
-          ]
         }
       ]
     },
@@ -136,8 +121,8 @@
     "eyebrow": "Non-profit · Non-sectarian · Pakistan",
     "title": "Empowered youth. Equal opportunities. A harmonious society.",
     "text": "We guide young people toward better careers, open doors to scholarships and jobs, and stand with families when disaster strikes.",
-    "image1": "https://theseekersclub.org/wp-content/uploads/2025/09/TheSeekers-Club.jpg",
-    "image2": "https://theseekersclub.org/wp-content/uploads/2025/09/theseek-planting-1024x576.jpg",
+    "image1": "assets/images/sliders/TheSeekers-Club.jpg",
+    "image2": "assets/images/sliders/parallax-8.jpg",
     "badgeBig": "2015",
     "badgeSmall": "Serving communities since 4 July 2015"
   },
@@ -163,7 +148,7 @@
     "quote": "Where empowerment meets equality, and diversity breeds harmony.",
     "name": "Abdul Ammar Mun'am",
     "role": "Founder and President",
-    "image": "https://theseekersclub.org/wp-content/uploads/2025/09/Abdul-Ammar-Munam.jpg"
+    "image": "assets/images/team/Abdul-Ammar-Munam.jpg"
   },
   "donate": {
     "bankDetails": ""
