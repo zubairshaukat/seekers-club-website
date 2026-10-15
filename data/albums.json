@@ -1,6 +1,38 @@
 {
   "albums": [
     {
+      "id": "youth-talent-awards-2026",
+      "title": "Youth Talent Awards 2026",
+      "type": "Youth",
+      "date": "2026-09-26",
+      "story": "youth-talent-awards-2026",
+      "description": "More than 50 young achievers honoured by our Lodhran Chapter at the District Council Hall, Lodhran.",
+      "photos": [
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-01.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-02.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-03.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-04.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-05.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-06.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-07.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-08.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-09.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-10.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-11.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-12.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-13.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-14.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-15.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-16.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-17.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-18.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-19.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-20.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-21.jpg",
+        "assets/images/Youth-Talent-Awards-2026/yta-2026-22.jpg"
+      ]
+    },
+    {
       "id": "flood-relief-visit",
       "title": "Flood relief visit",
       "type": "Relief",

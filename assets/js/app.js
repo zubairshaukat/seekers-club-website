@@ -96,8 +96,14 @@
 
 	function tel( p ) { return 'tel:' + String( p ).replace( /[^0-9+]/g, '' ); }
 
+	// Body lines: "## Heading" → sub-heading, "> text" → quote, anything else → paragraph.
 	function para( list ) {
-		return ( list || [] ).map( function ( p ) { return '<p>' + esc( p ) + '</p>'; } ).join( '' );
+		return ( list || [] ).map( function ( p ) {
+			p = String( p );
+			if ( p.indexOf( '## ' ) === 0 ) { return '<h2>' + esc( p.slice( 3 ) ) + '</h2>'; }
+			if ( p.indexOf( '> ' ) === 0 ) { return '<blockquote><p>' + esc( p.slice( 2 ) ) + '</p></blockquote>'; }
+			return '<p>' + esc( p ) + '</p>';
+		} ).join( '' );
 	}
 
 	function waShare( title ) {
@@ -460,19 +466,21 @@
 
 	pages.event = function ( s ) {
 		var id = params.get( 'id' );
-		Promise.all( [ load( 'events' ), load( 'albums' ) ] ).then( function ( r ) {
+		Promise.all( [ load( 'events' ), load( 'albums' ), load( 'stories' ) ] ).then( function ( r ) {
 			var ev = published( r[ 0 ].events ).filter( function ( e ) { return e.id === id; } )[ 0 ];
 			if ( ! ev ) { fill( '#sc-main', notFound( 'Event', 'events.html', 'All events' ) ); return; }
 			setMeta( ev.title, ev.summary );
 			var past = eventIsPast( ev );
 			var album = ev.album ? published( r[ 1 ].albums ).filter( function ( a ) { return a.id === ev.album; } )[ 0 ] : null;
 			var reg = ev.registerUrl || s.links.volunteer;
+			var evStory = published( r[ 2 ].stories ).filter( function ( x ) { return x.id === ev.id || ( ev.album && x.album === ev.album ); } )[ 0 ];
 			var crumb = '<a href="events.html">Events</a>' + ( past ? ' / <a href="events.html?when=past">Past</a>' : '' );
 			fill( '#sc-main',
 				hero( ev.title, ( ev.type ? ev.type + ' · ' : '' ) + eventWhen( ev ), false, crumb ) +
 				'<section class="sc-section"><div class="sc-wrap sc-layout"><article class="sc-layout__main">' +
 					( ev.image ? '<div class="sc-featured-img">' + img( ev.image, ev.title ) + '</div>' : '' ) +
 					'<div class="sc-entry">' + ( ev.summary ? '<p class="sc-lead">' + esc( ev.summary ) + '</p>' : '' ) + para( ev.body ) + '</div>' +
+					( evStory ? '<p style="margin-top:24px"><a class="sc-btn sc-btn--green" href="story.html?id=' + encodeURIComponent( evStory.id ) + '">Read the full story</a></p>' : '' ) +
 					( album && album.photos && album.photos.length ? '<h2 style="margin-top:40px">Photos</h2>' + photoGrid( album.photos.slice( 0, 8 ), album.title ) +
 						'<p style="margin-top:16px"><a class="sc-btn sc-btn--outline" href="album.html?id=' + encodeURIComponent( album.id ) + '">See the full album</a></p>' : '' ) +
 				'</article><aside class="sc-layout__side"><div class="sc-box"><h3>' + ( past ? 'This event has ended' : 'Event details' ) + '</h3><dl>' +

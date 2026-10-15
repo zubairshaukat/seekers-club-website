@@ -93,6 +93,10 @@
           "heading": "Events",
           "items": [
             {
+              "label": "Youth Talent Awards 2026",
+              "url": "story.html?id=youth-talent-awards-2026"
+            },
+            {
               "label": "Upcoming events",
               "url": "events.html"
             },

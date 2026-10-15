@@ -605,3 +605,6 @@ input[type="submit"]:hover, button[type="submit"]:hover { background: var(--sc-d
 .sc-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
 .sc-card:hover .sc-card__img img { transform: scale(1.03); }
 @media (max-width: 640px) { .sc-card__img { margin: -24px -24px 8px; } }
+
+/* Story sub-headings */
+.sc-entry h2 { font-size: 1.5rem; margin-top: 1.8em; }

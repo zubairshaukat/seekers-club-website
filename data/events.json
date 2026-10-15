@@ -1,6 +1,25 @@
 {
   "events": [
     {
+      "id": "youth-talent-awards-2026",
+      "title": "Youth Talent Awards 2026",
+      "type": "Youth",
+      "date": "2026-09-26",
+      "endDate": "",
+      "time": "",
+      "venue": "District Council Hall, Lodhran",
+      "mapUrl": "",
+      "registerUrl": "",
+      "image": "assets/images/Youth-Talent-Awards-2026/yta-2026-01.jpg",
+      "summary": "Organized by our Lodhran Chapter to recognize more than 50 young people for their talent, achievements and positive contribution to society.",
+      "body": [
+        "Award categories included Youth Excellence, Influencers, Content Creators, Best Teachers, Motivational Speakers, Food Vloggers, Entrepreneurs, Blood Donors and other areas of social and professional contribution.",
+        "Founder and Central President Abdul Ammar Mun’am travelled from Islamabad to attend as Chief Guest. The programme was organized under the leadership of Chaudhry Ameer Ali and Hamza Tareen, and hosted by Seemal Fatima and Hassan Fazal.",
+        "Read the full story for the Chief Guest’s message and highlights from the day."
+      ],
+      "album": "youth-talent-awards-2026"
+    },
+    {
       "draft": true,
       "id": "example-youth-counselling-session",
       "title": "Youth career counselling session",
