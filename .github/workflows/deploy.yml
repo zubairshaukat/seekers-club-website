@@ -31,10 +31,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check FTP server name
+        id: host
+        env:
+          RAW: ${{ secrets.FTP_SERVER }}
+        run: |
+          # Tidy common mistakes: "ftp://", trailing "/", a ":port", spaces or line breaks.
+          host=$(printf '%s' "$RAW" | tr -d '[:space:]' | sed -E 's#^[a-zA-Z]+://##; s#/.*$##; s#:[0-9]+$##')
+          echo "::add-mask::$host"
+          [ "$host" != "$RAW" ] && echo "Note: FTP_SERVER contained extra characters (scheme, slash, port or spaces) – they were removed."
+          [ -z "$host" ] && { echo "::error::FTP_SERVER secret is empty."; exit 1; }
+          echo "Server name is ${#host} characters long."
+          if getent hosts "$host" > /dev/null; then
+            echo "Server name resolves in DNS – OK."
+          else
+            echo "::error::The FTP_SERVER name does not exist in public DNS. Check the spelling, or use the server's IP address instead."
+            exit 1
+          fi
+          echo "name=$host" >> "$GITHUB_OUTPUT"
+
       - name: Upload over FTP / FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ steps.host.outputs.name }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
