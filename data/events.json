@@ -1,0 +1,22 @@
+{
+  "events": [
+    {
+      "draft": true,
+      "id": "example-youth-counselling-session",
+      "title": "Youth career counselling session",
+      "type": "Counselling",
+      "date": "2026-11-20",
+      "endDate": "",
+      "time": "10:00 am – 1:00 pm",
+      "venue": "Islamabad office, Thanda Pani",
+      "mapUrl": "",
+      "registerUrl": "",
+      "image": "",
+      "summary": "Free one-to-one guidance on study options, scholarships and careers for young people aged 16–25.",
+      "body": [
+        "This is an EXAMPLE event. It stays hidden while \"draft\" is true. Copy it, change the details, and set \"draft\" to false to publish."
+      ],
+      "album": ""
+    }
+  ]
+}

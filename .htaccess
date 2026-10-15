@@ -1,0 +1,32 @@
+# The Seekers Club – Apache settings (ignored on Nginx; see README.md)
+
+ErrorDocument 404 /404.html
+DirectoryIndex index.html
+
+# Always fetch fresh content files so updates show immediately
+<IfModule mod_headers.c>
+  <FilesMatch "\.json$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# Old WordPress addresses -> new pages (keeps Google links and shared links working)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^about/?$                                /about.html [R=301,L]
+RewriteRule ^people/?$                               /people.html?group=team [R=301,L]
+RewriteRule ^advisors/?$                             /people.html?group=advisors [R=301,L]
+RewriteRule ^volunteers/?$                           /people.html?group=volunteers [R=301,L]
+RewriteRule ^projects/?$                             /projects.html [R=301,L]
+RewriteRule ^youth/?$                                /youth.html [R=301,L]
+RewriteRule ^contact/?$                              /contact.html [R=301,L]
+RewriteRule ^donate/?$                               /donate.html [R=301,L]
+RewriteRule ^news-and-events/?$                      /stories.html [R=301,L]
+RewriteRule ^category/.*$                            /stories.html [R=301,L]
+RewriteRule ^(\d{4}/\d{2}/\d{2}/)?sawabi-support/?$                     /story.html?id=swabi-cloudburst-relief [R=301,L]
+RewriteRule ^(\d{4}/\d{2}/\d{2}/)?jallalpur/?$                          /story.html?id=jalalpur-pirwala-outreach [R=301,L]
+RewriteRule ^(\d{4}/\d{2}/\d{2}/)?vestibulum-commodo-volutpat-laoreet/?$ /story.html?id=mansehra-cash-distribution [R=301,L]
+RewriteRule ^(\d{4}/\d{2}/\d{2}/)?plantation/?$                         /story.html?id=tree-plantation-and-coolers [R=301,L]
+RewriteRule ^(\d{4}/\d{2}/\d{2}/)?southpunjab/?$                        /story.html?id=south-punjab-tree-plantation [R=301,L]
+RewriteRule ^(\d{4}/\d{2}/\d{2}/)?ration/?$                             /story.html?id=sindh-ration-distribution [R=301,L]
+</IfModule>

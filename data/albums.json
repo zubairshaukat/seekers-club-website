@@ -1,0 +1,71 @@
+{
+  "albums": [
+    {
+      "id": "swabi-cloudburst-relief",
+      "title": "Swabi cloudburst relief",
+      "type": "Relief",
+      "date": "2025-09-01",
+      "story": "swabi-cloudburst-relief",
+      "description": "Cash assistance for families affected by the cloudburst in Swabi, KPK.",
+      "photos": [
+        "https://theseekersclub.org/wp-content/uploads/2025/09/swabi.jpg"
+      ]
+    },
+    {
+      "id": "tree-plantation-and-coolers",
+      "title": "Tree plantation and cooler distribution",
+      "type": "Environment",
+      "date": "",
+      "story": "tree-plantation-and-coolers",
+      "description": "Planting trees in local communities and giving water coolers to low-income households.",
+      "photos": [
+        "https://theseekersclub.org/wp-content/uploads/2025/09/theseek-planting-1024x576.jpg",
+        "https://theseekersclub.org/wp-content/uploads/2025/09/planting.jpg"
+      ]
+    },
+    {
+      "id": "mansehra-cash-distribution",
+      "title": "Cash distribution, Mansehra",
+      "type": "Relief",
+      "date": "",
+      "story": "mansehra-cash-distribution",
+      "description": "Direct cash support for families facing hardship, by our KPK chapter.",
+      "photos": [
+        "https://theseekersclub.org/wp-content/uploads/2014/05/AFP.jpg"
+      ]
+    },
+    {
+      "id": "jalalpur-pirwala-outreach",
+      "title": "Jalalpur Pirwala food outreach",
+      "type": "Welfare",
+      "date": "",
+      "story": "jalalpur-pirwala-outreach",
+      "description": "Cooked meals for underprivileged households, by our South Punjab team.",
+      "photos": [
+        "https://theseekersclub.org/wp-content/uploads/2014/10/jallapur.jpg"
+      ]
+    },
+    {
+      "id": "south-punjab-tree-plantation",
+      "title": "South Punjab tree plantation",
+      "type": "Environment",
+      "date": "",
+      "story": "south-punjab-tree-plantation",
+      "description": "Trees planted in schools, public spaces and community areas.",
+      "photos": [
+        "https://theseekersclub.org/wp-content/uploads/2014/05/Tree_Planting-1024x682.jpeg"
+      ]
+    },
+    {
+      "id": "sindh-ration-distribution",
+      "title": "Sindh ration bag distribution",
+      "type": "Welfare",
+      "date": "",
+      "story": "sindh-ration-distribution",
+      "description": "Ration bags with essential food items for families in need.",
+      "photos": [
+        "https://theseekersclub.org/wp-content/uploads/2014/03/Picture3.jpg"
+      ]
+    }
+  ]
+}

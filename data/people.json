@@ -1,0 +1,42 @@
+{
+  "groups": {
+    "team": { "title": "Our team", "lead": "The people who lead our chapters and programmes across Pakistan." },
+    "advisors": { "title": "Board of advisors", "lead": "Experienced professionals who guide our strategy, programmes and growth." },
+    "volunteers": { "title": "Volunteers", "lead": "The heart of every drive. Thank you for your kindness, dear volunteers." }
+  },
+  "people": [
+    { "group": "team", "name": "Abdul Ammar Mun'am", "role": "Founder and President", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Abdul-Ammar-Munam.jpg" },
+    { "group": "team", "name": "Muhammad Zakki ul Hassan", "role": "Senior Vice President", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Zakir-SVP.png" },
+    { "group": "team", "name": "Anila Fateh", "role": "Vice President, Central Team", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/AneelaFateh.jpg" },
+    { "group": "team", "name": "Usman Shaukat", "role": "Vice President", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/usman-VP.jpg" },
+    { "group": "team", "name": "Mansoor Akhtar Khan", "role": "President, KPK Chapter", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Mansoor-Akhtar.jpg" },
+    { "group": "team", "name": "Aamir Ali", "role": "President, Sindh Chapter (Rural)", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Amir-Ali.jpg" },
+    { "group": "team", "name": "Raja Sadam Aziz Khan", "role": "President, AJK Chapter", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Sadam-Aziz-Khan.jpg" },
+    { "group": "team", "name": "Asif Nazeer", "role": "President, Punjab Chapter", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Asif-Nazeer.jpg" },
+    { "group": "team", "name": "Umair Saleem", "role": "Secretary General", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Umair-Saleem.jpg" },
+    { "group": "team", "name": "Madiha Azhar Butt", "role": "Manager, Communications, Marketing and PR", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Madiha-Azhar.jpg" },
+    { "group": "team", "name": "Aiza Ghafoor", "role": "Manager, Training & Professional Certifications", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Afza-Ghafoor.png" },
+    { "group": "team", "name": "Chaudhary Ameer Ali", "role": "Manager, Interfaith Dialogue & Harmony", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/AmeeriAli.png" },
+    { "group": "team", "name": "Saba Nazir", "role": "Manager, Women Empowerment & Gender Equality", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/SabaNazir.jpg" },
+    { "group": "team", "name": "Roma Ishaq", "role": "Manager, Research and Development", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Roma-Ishaq.png" },
+    { "group": "team", "name": "Muhammad Danyal", "role": "Manager, Digital Marketing", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/MuhammadDanyal.jpg" },
+    { "group": "team", "name": "Mariam Maqsood", "role": "Manager, Social Work", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Mariam-Maqsod.jpg" },
+    { "group": "team", "name": "Tahreem Rauf Butt", "role": "Manager, Social Media", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Tahreem-Butt.png" },
+    { "group": "team", "name": "Muhammad Hafeez Adv", "role": "Legal Consultant", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/M-Hafeez-Adovocate.png" },
+
+    { "group": "advisors", "name": "Asif Khan", "role": "Advisor, Leadership Excellence & Organizational Growth", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/AsifKhan.jpg", "bio": "Professional speaker, corporate trainer and international business coach with more than 22 years of experience, who has trained over 500,000 people in leadership and performance." },
+    { "group": "advisors", "name": "Dr. Romana Shabbar", "role": "Senior Advisor, Education, Psychology & Career Development", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Romana-Shabbar.jpg", "bio": "Educationist, economist, psychologist and career counsellor (PhD Economics, M.Phil. Psychology) working on bonded labour, women's empowerment and career development." },
+    { "group": "advisors", "name": "Dr. Ali Raza Nemati", "role": "Strategic Advisor, Career Planning & Development", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Ali-Raza-Nemati.jpg", "bio": "HR professional with a PhD in Management and Chartered Manager status from the UK's Chartered Management Institute. Has trained at 150+ institutions, reaching over 20,000 people." },
+    { "group": "advisors", "name": "Muhammad Ali", "role": "Strategic Advisor, Youth Development & Empowerment", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/M-Ali.jpg", "bio": "MPhil Finance and MBA, with around 30 years of teaching and 23 years in banking and finance, including four years abroad." },
+    { "group": "advisors", "name": "Muhammad Mansha", "role": "Advisor, Social Sciences & Behavioral Studies", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Mabsha.jpg", "bio": "MSc Sociology with a background in psychology. Served 15 years in government roles in Pakistan and now contributes to health, social care and community research in the UK." },
+    { "group": "advisors", "name": "Prof. Nureed Fatima", "role": "Advisor, Academic Excellence & Character Development", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Prof.-Nureed-Fatima.jpg", "bio": "Educationist, researcher and motivational speaker; PhD scholar in Iqbal Studies, teacher trainer since 2012, and radio broadcaster and TV anchor since 2007." },
+
+    { "group": "volunteers", "name": "Zunurain Habib", "role": "", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Zunurain-Habib.jpg" },
+    { "group": "volunteers", "name": "Mukhtiar Afzal", "role": "", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Mukhtiar-Afzal.jpg" },
+    { "group": "volunteers", "name": "Baqir Hussain", "role": "", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Baqir-Hussain.jpg" },
+    { "group": "volunteers", "name": "Asad Shahid", "role": "", "photo": "https://theseekersclub.org/wp-content/uploads/2025/09/Asad-Shahid.jpg" },
+    { "group": "volunteers", "name": "Hassan Mustafa", "role": "", "photo": "https://theseekersclub.org/wp-content/uploads/2025/10/Hassan-Mustafa.png" },
+    { "group": "volunteers", "name": "Ijaz Ahmad", "role": "", "photo": "https://theseekersclub.org/wp-content/uploads/2025/10/Ijaz-Ahmad.png" },
+    { "group": "volunteers", "name": "Saad Arif", "role": "", "photo": "https://theseekersclub.org/wp-content/uploads/2025/10/Saad-Arif.png" }
+  ]
+}
