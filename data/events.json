@@ -20,6 +20,24 @@
       "album": "youth-talent-awards-2026"
     },
     {
+      "id": "flood-relief-visit",
+      "title": "Flood relief visit",
+      "type": "Relief",
+      "date": "",
+      "past": true,
+      "endDate": "",
+      "time": "",
+      "venue": "Flood-affected village",
+      "mapUrl": "",
+      "registerUrl": "",
+      "image": "assets/images/flood-support/TheSeekers-floo-support-4.jpg",
+      "summary": "Our team visited a flood-hit village to assess the damage and meet affected families.",
+      "body": [
+        "The team walked through damaged homes and streets, met residents and elders, and noted the most urgent needs: shelter, food, clean water and help with rebuilding."
+      ],
+      "album": "flood-relief-visit"
+    },
+    {
       "draft": true,
       "id": "example-youth-counselling-session",
       "title": "Youth career counselling session",

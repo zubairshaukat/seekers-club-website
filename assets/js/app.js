@@ -265,6 +265,7 @@
 	/* ---------------- shared blocks ---------------- */
 
 	function eventIsPast( ev ) {
+		if ( ev.past ) { return true; }
 		var d = parseDate( ev.endDate || ev.date );
 		return d ? d < today() : false;
 	}
@@ -275,14 +276,15 @@
 		} );
 	}
 
-	function dateBox( s ) {
+	function dateBox( s, past ) {
 		var d = parseDate( s );
+		if ( ! d && past ) { return '<div class="sc-event__date"><small>Past</small><strong>—</strong></div>'; }
 		return '<div class="sc-event__date"><small>' + ( d ? MONTHS[ d.getMonth() ] : 'Date' ) + '</small><strong>' + ( d ? d.getDate() : 'TBA' ) + '</strong></div>';
 	}
 
 	function eventWhen( ev ) {
 		var d = parseDate( ev.date );
-		if ( ! d ) { return 'Date to be announced'; }
+		if ( ! d ) { return ev.past ? 'Date not recorded' : 'Date to be announced'; }
 		var out = DAYS[ d.getDay() ] + ', ' + fmtLong( ev.date );
 		if ( ev.endDate && ev.endDate !== ev.date ) { out += ' – ' + fmtLong( ev.endDate ); }
 		if ( ev.time ) { out += ' · ' + ev.time; }
@@ -304,7 +306,7 @@
 		var past = eventIsPast( ev );
 		var where = [ ev.time, ev.venue ].filter( Boolean ).join( ' · ' );
 		var url = 'event.html?id=' + encodeURIComponent( ev.id );
-		return '<article class="sc-event' + ( past ? ' sc-event--past' : '' ) + '">' + dateBox( ev.date ) +
+		return '<article class="sc-event' + ( past ? ' sc-event--past' : '' ) + '">' + dateBox( ev.date, ev.past ) +
 			'<div class="sc-event__info">' + ( ev.type ? '<span class="sc-event__tag">' + esc( ev.type ) + '</span>' : '' ) +
 			'<h3 class="sc-event__title"><a href="' + url + '">' + esc( ev.title ) + '</a></h3>' +
 			( where ? '<span class="sc-event__where">' + esc( where ) + '</span>' : '' ) + '</div>' +
@@ -451,7 +453,7 @@
 				var month = '';
 				list.forEach( function ( e ) {
 					var d = parseDate( e.date );
-					var m = d ? MONTHS_LONG[ d.getMonth() ] + ' ' + d.getFullYear() : 'Date to be announced';
+					var m = d ? MONTHS_LONG[ d.getMonth() ] + ' ' + d.getFullYear() : ( e.past ? 'Earlier' : 'Date to be announced' );
 					if ( m !== month ) {
 						html += ( month ? '</div>' : '' ) + '<h2 class="sc-events-month">' + esc( m ) + '</h2><div class="sc-events-list">';
 						month = m;

@@ -39,6 +39,24 @@
       "album": "youth-talent-awards-2026"
     },
     {
+      "id": "flood-relief-visit",
+      "title": "Standing with flood-affected families",
+      "date": "",
+      "category": "Relief",
+      "image": "assets/images/flood-support/TheSeekers-floo-support-4.jpg",
+      "summary": "Our team visited a flood-hit village to see the damage first-hand, meet affected families and assess what support they need most.",
+      "body": [
+        "When floods tear through a village, the damage does not end when the water goes down. Homes are left cracked or collapsed, streets turn to mud and debris, and families are left to rebuild with very little.",
+        "A team from The Seekers Club travelled to one such flood-affected village to see the situation on the ground. Walking through damaged lanes and broken mud-brick homes, the team met families who had lost their shelter and belongings, and listened to what they needed most.",
+        "## Listening first",
+        "Relief works best when it starts with listening. Our volunteers sat with residents and elders outside their damaged homes, heard their concerns, and noted the most urgent needs — safe shelter, food, clean water and help with rebuilding.",
+        "## Why these visits matter",
+        "Visits like this help us direct support where it makes the biggest difference, and they remind families that they have not been forgotten. They are part of our wider commitment to stand with communities in times of disaster, just as we did during the 2022 floods and the 2025 cloudburst in Swabi.",
+        "You can help us reach more families affected by floods and natural disasters. Every donation goes directly to relief on the ground."
+      ],
+      "album": "flood-relief-visit"
+    },
+    {
       "id": "swabi-cloudburst-relief",
       "title": "Supporting cloudburst victims in Swabi, KPK",
       "date": "2025-09-01",

@@ -63,6 +63,10 @@
           "heading": "Welfare activities",
           "items": [
             {
+              "label": "Standing with flood-affected families",
+              "url": "story.html?id=flood-relief-visit"
+            },
+            {
               "label": "Supports cloudburst victims",
               "url": "story.html?id=swabi-cloudburst-relief"
             },
