@@ -95,6 +95,7 @@ Set these once in the repo under **Settings → Secrets and variables → Action
 | Variable | `FTP_DIR`      | `/public_html/` (must end in `/`) |
 | Variable | `FTP_PROTOCOL` | `ftps` (default) or `ftp`       |
 | Variable | `FTP_PORT`     | `21` (default)                  |
+| Variable | `FTP_SECURITY` | `loose` only if `FTP_SERVER` is an IP address (certificate won't match) |
 
 Re-run a deploy any time from **Actions → Deploy website → Run workflow**.
 The first run uploads everything; later runs upload only what changed (a `.ftp-deploy-sync-state.json` file on the server tracks this — don't delete it).
