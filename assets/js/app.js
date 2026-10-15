@@ -393,13 +393,24 @@
 					'<a class="sc-btn sc-btn--outline" href="events.html?when=past">See past events</a>' ) );
 		} );
 
+		// "From the field": 10 random photos from all albums, reshuffled on every visit.
 		load( 'albums' ).then( function ( d ) {
-			var list = published( d.albums ).filter( hasPhotos ).sort( byDateDesc ).slice( 0, 4 );
-			if ( ! list.length ) { return; }
-			fill( '#home-gallery-strip', list.map( function ( al ) {
-				return '<a href="album.html?id=' + encodeURIComponent( al.id ) + '">' + img( al.cover || ( al.photos || [] )[ 0 ], '' ) + '<span>' + esc( al.title ) + '</span></a>';
+			var pool = [];
+			published( d.albums ).filter( hasPhotos ).forEach( function ( al ) {
+				al.photos.forEach( function ( src ) { pool.push( { src: src, album: al } ); } );
+			} );
+			if ( ! pool.length ) { return; }
+			for ( var i = pool.length - 1; i > 0; i-- ) {
+				var j = Math.floor( Math.random() * ( i + 1 ) );
+				var t = pool[ i ]; pool[ i ] = pool[ j ]; pool[ j ] = t;
+			}
+			fill( '#home-gallery-strip', pool.slice( 0, 10 ).map( function ( x ) {
+				return '<a href="' + esc( x.src ) + '" data-sc-photo title="' + esc( x.album.title ) + '">' +
+					img( x.src, x.album.title ) + '<span>' + esc( x.album.title ) + '</span></a>';
 			} ).join( '' ) );
+			$( '#home-gallery-strip' ).setAttribute( 'data-sc-lightbox', '' );
 			$( '#home-gallery' ).hidden = false;
+			initLightbox();
 		} );
 
 		load( 'stories' ).then( function ( d ) {
