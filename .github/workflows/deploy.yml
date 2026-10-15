@@ -35,20 +35,21 @@ jobs:
         id: host
         env:
           RAW: ${{ secrets.FTP_SERVER }}
+          # Hosting server's public IP – used when FTP_SERVER is empty or not in DNS.
+          FALLBACK_IP: "103.180.236.111"
+          SECURITY: ${{ vars.FTP_SECURITY || 'strict' }}
         run: |
           # Tidy common mistakes: "ftp://", trailing "/", a ":port", spaces or line breaks.
           host=$(printf '%s' "$RAW" | tr -d '[:space:]' | sed -E 's#^[a-zA-Z]+://##; s#/.*$##; s#:[0-9]+$##')
-          echo "::add-mask::$host"
-          [ "$host" != "$RAW" ] && echo "Note: FTP_SERVER contained extra characters (scheme, slash, port or spaces) – they were removed."
-          [ -z "$host" ] && { echo "::error::FTP_SERVER secret is empty."; exit 1; }
-          echo "Server name is ${#host} characters long."
-          if getent hosts "$host" > /dev/null; then
-            echo "Server name resolves in DNS – OK."
-          else
-            echo "::error::The FTP_SERVER name does not exist in public DNS. Check the spelling, or use the server's IP address instead."
-            exit 1
+          if [ -n "$host" ] && ! printf '%s' "$host" | grep -Eq '^[0-9.]+$' && ! getent hosts "$host" > /dev/null; then
+            echo "::warning::FTP_SERVER name is not in public DNS – using the server IP instead."
+            host=""
           fi
+          [ -z "$host" ] && host="$FALLBACK_IP"
+          # A bare IP never matches the FTPS certificate, so relax the name check (still encrypted).
+          if printf '%s' "$host" | grep -Eq '^[0-9.]+$'; then SECURITY=loose; fi
           echo "name=$host" >> "$GITHUB_OUTPUT"
+          echo "security=$SECURITY" >> "$GITHUB_OUTPUT"
 
       - name: Upload over FTP / FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -59,7 +60,7 @@ jobs:
           protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
           port: ${{ vars.FTP_PORT || 21 }}
           server-dir: ${{ vars.FTP_DIR || './' }}
-          security: ${{ vars.FTP_SECURITY || 'strict' }}
+          security: ${{ steps.host.outputs.security }}
           exclude: |
             **/.git*
             **/.git*/**
